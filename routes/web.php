@@ -19,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 // })->name('home');
 
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
+
+Route::get('/characters/{characters}', [CharacterController::class, 'show'])->name('characters.show');

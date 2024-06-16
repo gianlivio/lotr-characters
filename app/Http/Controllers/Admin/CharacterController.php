@@ -13,7 +13,8 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        return view('characters.index');
+        $characterArray = Character::all();
+        return view('characters.index', compact('characterArray'));
     }
 
     /**
@@ -37,7 +38,8 @@ class CharacterController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $character = Character::findOrFail($id);
+        return view('characters.show', compact('character'));
     }
 
     /**
