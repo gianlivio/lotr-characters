@@ -9,9 +9,8 @@
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Razza</th>
-                    <th scope="col">Nascita</th>
-                    <th scope="col">Morte</th>
                     <th scope="col">Regno</th>
+                    <th scope="col">Dettagli</th> 
                 </tr>
             </thead>
             <tbody>
@@ -19,9 +18,10 @@
                     <tr>
                         <td>{{ $character->name }}</td>
                         <td>{{ $character->race }}</td>
-                        <td>{{ $character->birth }}</td>
-                        <td>{{ $character->death }}</td>
                         <td>{{ $character->realm }}</td>
+                        <td>
+                            <a href="{{ route('characters.show', $character->id) }}" class="btn btn-success">Dettagli</a>
+                        </td> 
                     </tr>
                 @endforeach
             </tbody>
